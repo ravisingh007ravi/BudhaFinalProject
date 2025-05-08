@@ -8,17 +8,17 @@ function navbar() {
       </div>
 
       <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="./index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-        <li><a href="./About.html" class="hover:text-blue-600 transition-colors">About</a></li>
-        <li><a href="./Services.html" class="hover:text-blue-600 transition-colors">Services</a></li>
-        <li><a href="./Contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
+        <li><a href="./pages/index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
+        <li><a href="./pages/About.html" class="hover:text-blue-600 transition-colors">About</a></li>
+        <li><a href="./pages/Services.html" class="hover:text-blue-600 transition-colors">Services</a></li>
+        <li><a href="./pages/Contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
       </ul>
 
       <div class="hidden md:flex space-x-4">
-        <a href="./SignIn.html"><button
+        <a href="./pages/SignIn.html"><button
             class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 transition-colors">Sign
             In</button></a>
-        <a href="./SignUp.html"><button
+        <a href="./pages/SignUp.html"><button
             class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Sign
             Up</button></a>
       </div>
@@ -30,16 +30,16 @@ function navbar() {
 
     <div id="mobile-menu" class="md:hidden flex flex-col items-center bg-white shadow-lg px-6">
       <ul class="flex flex-col space-y-4 py-4 font-medium">
-        <li><a href="./index.html" class="hover:text-blue-600 transition-colors block">Home</a></li>
-        <li><a href="./About.html" class="hover:text-blue-600 transition-colors block">About</a></li>
-        <li><a href="./Services.html" class="hover:text-blue-600 transition-colors block">Services</a></li>
-        <li><a href="./Contact.html" class="hover:text-blue-600 transition-colors block">Contact</a></li>
+        <li><a href="./pages/index.html" class="hover:text-blue-600 transition-colors block">Home</a></li>
+        <li><a href="./pages/About.html" class="hover:text-blue-600 transition-colors block">About</a></li>
+        <li><a href="./pages/Services.html" class="hover:text-blue-600 transition-colors block">Services</a></li>
+        <li><a href="./pages/Contact.html" class="hover:text-blue-600 transition-colors block">Contact</a></li>
       </ul>
       <div class="flex flex-col space-y-4 pb-4">
-        <a href="./SignIn.html"><button
+        <a href="./pages/SignIn.html"><button
             class="w-full px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 transition-colors">Sign
             In</button></a>
-        <a href="./SignUp.html"><button
+        <a href="./pages/SignUp.html"><button
             class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Sign
             Up</button></a>
       </div>
