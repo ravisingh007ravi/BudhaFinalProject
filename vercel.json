@@ -1,12 +1,4 @@
 {
-    "builds": [
-      {
-        "src": "index.html",
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      { "src": "/index.html", "dest": "/index.html" }
-    ]
-  }
-  
+    "$schema": "https://openapi.vercel.sh/vercel.json",
+    "outputDirectory": "src"
+}
