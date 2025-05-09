@@ -1,61 +1,48 @@
 function navbar() {
+  const MENUData = [
+    { name: "Home", link: "./index.html" },
+    { name: "About", link: "./about.html" },
+    { name: "Services", link: "./service.html" },
+    { name: "Contact", link: "./contact.html" },
+    { name: "FeedBack", link: "./feedback.html" },
+  ];
+
+  const AuthData = [
+    { name: "Sign In", link: "./signin.html" },
+    { name: "Sign Up", link: "./signup.html" },
+  ];
+
+  const menu = MENUData.map((item) =>
+    `<li><a href="${item.link}" class="hover:text-blue-600 transition-colors">${item.name}</a></li>`).join("")
+
+  const auth = AuthData.map((item) =>
+    `<a href="${item.link}">
+          <button class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 transition-colors">
+            ${item.name}
+          </button>
+        </a>`
+  ).join("")
+
   return `
-    <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky w-full">
-      <div class="text-2xl font-bold">
-        <a href="./index.html">
-          <h1>Ravi</h1>
-        </a>
+      <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 w-full z-50">
+        <div class="text-2xl font-bold">
+          <a href="./index.html">Ravi</a>
+        </div>
+  
+        <ul class="hidden md:flex space-x-6 font-medium">${menu}</ul>
+  
+        <div class="hidden md:flex space-x-4">${auth}</div>
+  
+        <div class="md:hidden">
+          <i class="fa-solid fa-bars text-2xl text-black cursor-pointer" id="menu-toggle"></i>
+        </div>
+      </nav>
+  
+      <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-white shadow-lg px-6">
+        <ul class="flex flex-col items-center space-y-4 py-4 font-medium">${menu}</ul>
+        <div class="flex flex-col items-center space-y-4 pb-4"> ${auth}</div>
       </div>
-
-      <ul class="hidden md:flex space-x-6 font-medium">
-        <li><a href="./pages/index.html" class="hover:text-blue-600 transition-colors">Home</a></li>
-        <li><a href="./pages/About.html" class="hover:text-blue-600 transition-colors">About</a></li>
-        <li><a href="./pages/Services.html" class="hover:text-blue-600 transition-colors">Services</a></li>
-        <li><a href="./pages/Contact.html" class="hover:text-blue-600 transition-colors">Contact</a></li>
-      </ul>
-
-      <div class="hidden md:flex space-x-4">
-        <a href="./pages/SignIn.html"><button
-            class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 transition-colors">Sign
-            In</button></a>
-        <a href="./pages/SignUp.html"><button
-            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Sign
-            Up</button></a>
-      </div>
-
-      <div class="md:hidden">
-        <i class="fa-solid fa-bars text-2xl cursor-pointer" id="menu-toggle"></i>
-      </div>
-    </nav>
-
-    <div id="mobile-menu" class="md:hidden flex flex-col items-center bg-white shadow-lg px-6">
-      <ul class="flex flex-col space-y-4 py-4 font-medium">
-        <li><a href="./pages/index.html" class="hover:text-blue-600 transition-colors block">Home</a></li>
-        <li><a href="./pages/About.html" class="hover:text-blue-600 transition-colors block">About</a></li>
-        <li><a href="./pages/Services.html" class="hover:text-blue-600 transition-colors block">Services</a></li>
-        <li><a href="./pages/Contact.html" class="hover:text-blue-600 transition-colors block">Contact</a></li>
-      </ul>
-      <div class="flex flex-col space-y-4 pb-4">
-        <a href="./pages/SignIn.html"><button
-            class="w-full px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-100 transition-colors">Sign
-            In</button></a>
-        <a href="./pages/SignUp.html"><button
-            class="w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">Sign
-            Up</button></a>
-      </div>
-    </div>
-
-    <style>
-      #mobile-menu {
-        transition: all 0.3s ease;
-        max-height: 0;
-        overflow: hidden;
-      }
-      #mobile-menu.active {
-        max-height: 500px;
-      }
-    </style>
-  `;
+    `;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
 
   toggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+    mobileMenu.classList.toggle("max-h-0");
+    mobileMenu.classList.toggle("max-h-[500px]");
   });
 });
